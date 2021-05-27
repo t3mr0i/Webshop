@@ -3,30 +3,75 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
-<meta charset="UTF-8">
-<title>Registrieren</title>
+    <meta charset="UTF-8">
+    <title>Registrieren</title>
 </head>
 
 <body>
 <h2>Registrieren.</h2>
 <div id="log_in_box">
-  <form method="post">
-    <label for="email"></label>
-    <input type="text" name="vorname" id="vorname" placeholder="Vorname">
-    <br>
-    <input type="text" name="name" id="name" placeholder="Name">
-    <br>
-    <input type="email" name="email" id="email" placeholder="E-Mail Adresse">
-    <br>
-    <input type="password" name="passwort" id="passwort" placeholder="Passwort">
-    <br>
-    <input type="password" name="passwort_wiederholen" id="passwort_wiederholen" placeholder="Passwort wiederholen">
-    <br>
-	 <div id="buttonRow">
-    <a href=""> <button class="button1" type="button" value="Anmelden">Anmelden</button></a>
-    <a href="log_in.html"><button class="button3" type="button">Abbrechen</button></a>
+    <form method="post">
+        <label for="email"></label>
+        <input type="text" name="vorname" id="vorname" placeholder="Vorname">
+        <br>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <br>
+        <input type="email" name="email" id="email" placeholder="E-Mail Adresse">
+        <br>
+        <input type="password" name="passwort" id="passwort" placeholder="Passwort">
+        <br>
+        <input type="password" name="passwort_wiederholen" id="passwort_wiederholen" placeholder="Passwort wiederholen">
+        <br>
+        <p id="passwordWarningText"></p>
+
+        <div id="buttonRow">
+            <a href="">
+                <button class="button1-hidden" type="button" value="Anmelden" id="signUp" disabled=false>Anmelden
+                </button>
+            </a>
+            <a href="log_in.html">
+                <button class="button3" type="button">Abbrechen</button>
+            </a>
+        </div>
+    </form>
 </div>
-  </form>
-</div>
+<script>
+
+    function checkPassword() {
+        var passwordInput;
+        var secondPasswordInput;
+        passwordInput = document.getElementById("passwort").value;
+        secondPasswordInput = document.getElementById("passwort_wiederholen").value;
+
+        if (passwordInput === "") {
+            document.getElementById('passwordWarningText').innerHTML = "";
+        }
+        if (RegExp(/^(?=.*\d).{5,}$/).test(passwordInput)) {
+            if (passwordInput === secondPasswordInput) {
+                console.log("hiBlur")
+                document.getElementById('passwordWarningText').innerHTML = "";
+                document.getElementById('signUp').className = "button1";
+            }
+            if (secondPasswordInput === "" || null) {
+                document.getElementById('passwordWarningText').innerHTML = "";
+            } else {
+            }
+        } else {
+            document.getElementById('passwordWarningText').innerHTML = "The password has to be atleast 5 characters long and contain one number.";
+        }
+
+    }
+
+    document.getElementById('passwort').onblur = function () {
+        checkPassword();
+    };
+    document.getElementById('passwort_wiederholen').onblur = function () {
+        checkPassword();
+    };
+
+    document.getElementById('passwort').onfocus = function () {
+
+    };
+</script>
 </body>
 </html>
