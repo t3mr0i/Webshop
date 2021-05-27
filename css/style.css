@@ -49,7 +49,7 @@ header .button5 {
     justify-content: center;
     list-style: none;
     text-align: center;
-    padding: 0px;
+    padding: 0;
 
 }
 
@@ -87,7 +87,7 @@ header .button5 {
 
 body {
     background-color: white;
-    margin: 5% 0px 0px 0px;
+    margin: 5% 0 0 0;
     text-align: center;
 }
 
@@ -165,7 +165,7 @@ tfoot {
     color: #000000;
     padding: 10px;
     text-align: right;
-    border: 0px;
+    border: 0;
 }
 
 #aktueller_artikel td {
@@ -173,7 +173,7 @@ tfoot {
     text-align: left;
     width: 100px;
     padding: 10px;
-    border: 0px;
+    border: 0;
     margin: 0 auto;
 }
 
@@ -228,7 +228,7 @@ tfoot {
 form input {
     text-align: center;
     font-size: 16px;
-    margin: 15px 0px 15px 0px;
+    margin: 15px 0 15px 0;
     width: 80%;
     height: 40px;
     border-radius: 11px;
@@ -260,7 +260,6 @@ label {
     text-decoration: none;
     font-family: Helvetica Neue;
     font-size: 16px;
-    margin: 10px 25;
 }
 
 /*Buttons*/
@@ -280,6 +279,20 @@ button:hover {
     font-size: 20px;
     font-family: Helvetica Neue;
 
+
+}
+.wrong-password {
+    border-color: red;
+    color: #ea9c7a;
+    font-size: 20px;
+    outline-color: red;
+}
+
+.valid-password {
+    border-color:#94BAB7;
+    color: #ea9c7a;
+    font-size: 20px;
+    outline-color: #94BAB7;
 }
 .button1 {
     background-color: #94BAB7;
@@ -326,7 +339,7 @@ button:hover {
     border-radius: 25px;
     width: 100px;
     height: 40px;
-    margin: 25px 10px 20px 0px;
+    margin: 25px 10px 20px 0;
 }
 
 .button5 i {
@@ -341,7 +354,7 @@ button:hover {
 }
 
 .button6 {
-    font-size: 0px;
+    font-size: 0;
     text-align: center;
     justify-content: center;
     background-color: #FFFFFF;
@@ -361,8 +374,8 @@ button:hover {
 }
 
 #stars:hover img {
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     visibility: hidden;
 }
 
@@ -408,7 +421,7 @@ footer p {
         display: flex;
         flex-direction: column;
         text-align: center;
-        padding: 10 auto 10 auto;
+        padding: 10px auto 10px auto;
     }
 }
 
@@ -478,14 +491,14 @@ footer p {
 
     /*An-/Abmelden*/
     .button5 {
-        font-size: 0px;
+        font-size: 0;
         justify-content: center;
         text-align: center;
         color: #FFFFFF;
         border-radius: 50px;
         width: 40px;
         height: 40px;
-        margin: 25px 10px 25px 0px;
+        margin: 25px 10px 25px 0;
     }
 
     .button5 i {
