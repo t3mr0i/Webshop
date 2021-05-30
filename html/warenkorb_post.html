@@ -75,26 +75,26 @@
 
         cartPost[0][2] -= 1;
         document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
-
+        updateCart();
     }
 
     function increase() {
         cartPost[0][2] += 1;
         document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
-
+        updateCart();
     }
 
     function decrease2() {
 
         cartPost[1][2] -= 1;
         document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
-
+        updateCart();
     }
 
     function increase2() {
         cartPost[1][2] += 1;
         document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
-
+        updateCart();
     }
 
     document.getElementById("artikel1").innerHTML = cartPost[0][0];
@@ -104,7 +104,10 @@
     document.getElementById("artikel2Preis").innerHTML = cartPost[1][1];
     document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
     document.getElementById("total").innerHTML = cartPost[0][1] * cartPost[0][2] + cartPost[1][1] * cartPost[1][2];
+    function updateCart() {
+        document.getElementById("total").innerHTML = cartPost[0][1] * cartPost[0][2] + cartPost[1][1] * cartPost[1][2];
 
+    }
 
 </script>
 <footer>

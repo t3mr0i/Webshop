@@ -66,23 +66,26 @@
     function decrease() {
 
         cartPost[0][2] -= 1;
-        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
-
-    }
+        document.getElementById("artikel1Menge").innerHTML = cartPeter[0][2];
+        updateCart()    }
 
     function increase() {
         cartPost[0][2] += 1;
-        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
-
+        document.getElementById("artikel1Menge").innerHTML = cartPeter[0][2];
+        updateCart()
     }
+
     document.getElementById("artikel1").innerHTML = cartPeter[0][0];
     document.getElementById("artikel1Preis").innerHTML = cartPeter[0][1];
     document.getElementById("artikel1Menge").innerHTML = cartPeter[0][2];
+let article = cartPeter[0][2];
 
+    document.getElementById("total").innerHTML = (cartPeter[0][1] * cartPeter[0][2]);
 
-    document.getElementById("total").innerHTML = cartPeter[0][1] * cartPeter[0][2];
+function updateCart() {
+    document.getElementById("total").innerHTML = (cartPeter[0][1] * cartPeter[0][2]);
 
-
+}
 </script>
 <footer>
     <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>

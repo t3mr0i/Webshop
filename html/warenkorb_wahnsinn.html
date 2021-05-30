@@ -74,28 +74,31 @@
 <script>
     function decrease() {
 
-        cartPost[0][2] -= 1;
-        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+        cartWahnsinn[0][2] -= 1;
+        document.getElementById("artikel1Menge").innerHTML = cartWahnsinn[0][2];
+        updateCart();
 
     }
 
     function increase() {
-        cartPost[0][2] += 1;
-        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+        cartWahnsinn[0][2] += 1;
+        document.getElementById("artikel1Menge").innerHTML = cartWahnsinn[0][2];
+        updateCart();
 
     }
 
     function decrease2() {
 
-        cartPost[1][2] -= 1;
-        document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
+        cartWahnsinn[1][2] -= 1;
+        document.getElementById("artikel2Menge").innerHTML = cartWahnsinn[1][2];
+        updateCart();
 
     }
 
     function increase2() {
-        cartPost[1][2] += 1;
-        document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
-
+        cartWahnsinn[1][2] += 1;
+        document.getElementById("artikel2Menge").innerHTML = cartWahnsinn[1][2];
+        updateCart();
     }
 
     document.getElementById("artikel1").innerHTML = cartWahnsinn[0][0];
@@ -106,6 +109,12 @@
     document.getElementById("artikel2Menge").innerHTML = cartWahnsinn[1][2];
 
     document.getElementById("total").innerHTML = cartWahnsinn[0][1] * cartWahnsinn[0][2] + cartWahnsinn[1][1] * cartWahnsinn[1][2];
+
+    function updateCart() {
+        document.getElementById("total").innerHTML = cartWahnsinn[0][1] * cartWahnsinn[0][2] + cartWahnsinn[1][1] * cartWahnsinn[1][2];
+
+    }
+
 </script>
 <footer>
     <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>

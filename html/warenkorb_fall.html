@@ -45,7 +45,8 @@
                 <p id="artikel1Menge"></p>
                 <button class="cartButton" type="button" onclick=increase()>+</button>
 
-            </td>            <td id="artikel1Preis"></td>
+            </td>
+            <td id="artikel1Preis"></td>
         </tr>
         <tr>
             <td id="artikel2"></td>
@@ -57,16 +58,7 @@
             </td>
             <td id="artikel2Preis"></td>
         </tr>
-        <tr>
-            <td id="artikel3"></td>
-            <td>
-                <button class="cartButton" type="button" onclick=decrease3()>-</button>
-                <p id="artikel3Menge"></p>
-                <button class="cartButton" type="button" onclick=increase3()>+</button>
 
-            </td>
-            <td id="artikel3Preis"></td>
-        </tr>
         </tbody>
         <tfoot>
         <tr>
@@ -83,54 +75,50 @@
 <script>
     function decrease() {
 
-        cartPost[0][2] -= 1;
-        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+        cartFall[0][2] -= 1;
+        document.getElementById("artikel1Menge").innerHTML = cartFall[0][2];
+        updateCart();
 
     }
 
     function increase() {
-        cartPost[0][2] += 1;
-        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+        cartFall[0][2] += 1;
+        document.getElementById("artikel1Menge").innerHTML = cartFall[0][2];
+        updateCart();
 
     }
 
     function decrease2() {
 
-        cartPost[1][2] -= 1;
-        document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
+        cartFall[1][2] -= 1;
+        document.getElementById("artikel2Menge").innerHTML = cartFall[1][2];
+        updateCart();
 
     }
 
     function increase2() {
-        cartPost[1][2] += 1;
-        document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
-
-    }
-    function decrease3() {
-
-        cartPost[2][2] -= 1;
-        document.getElementById("artikel3Menge").innerHTML = cartPost[2][2];
+        cartFall[1][2] += 1;
+        document.getElementById("artikel2Menge").innerHTML = cartFall[1][2];
+        updateCart();
 
     }
 
-    function increase3() {
-        cartPost[2][2] += 1;
-        document.getElementById("artikel3Menge").innerHTML = cartPost[2][2];
 
-    }
+var amount1 = cartFall[0][2];
     document.getElementById("artikel1").innerHTML = cartFall[0][0];
     document.getElementById("artikel1Preis").innerHTML = cartFall[0][1];
     document.getElementById("artikel1Menge").innerHTML = cartFall[0][2];
     document.getElementById("artikel2").innerHTML = cartFall[1][0];
     document.getElementById("artikel2Preis").innerHTML = cartFall[1][1];
     document.getElementById("artikel2Menge").innerHTML = cartFall[1][2];
-    document.getElementById("artikel3").innerHTML = cartFall[2][0];
-    document.getElementById("artikel3Preis").innerHTML = cartFall[2][1];
-    document.getElementById("artikel3Menge").innerHTML = cartFall[2][2];
 
 
-    document.getElementById("total").innerHTML = cartFall[0][1] * cartFall[0][2] + cartFall[1][1] * cartFall[1][2] + cartFall[2][1] * cartFall[2][2];
 
+    document.getElementById("total").innerHTML = cartFall[0][1] * cartFall[0][2]+ cartFall[1][1] * cartFall[1][2]
+    function updateCart() {
+        document.getElementById("total").innerHTML = cartFall[0][1] * cartFall[0][2]+ cartFall[1][1] * cartFall[1][2]
+
+    }
 </script>
 <footer>
     <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>

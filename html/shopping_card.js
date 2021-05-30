@@ -24,7 +24,6 @@ const allProducts = [
 const cartFall = [
     pulli_rosa,
     pulli_rot,
-    jacke_gelb
 ]
 
 const cartPeter = [
