@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="shopping_card.js"></script>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Übersicht der Warenkörbe</title>
+</head>
+
+<body>
+
+<header>
+    <div id="KaisShopKlein"><img src="../img/KaisShopKlein.png" alt="KaisShopKlein"></div>
+    <div id="KaisShopBlack"><img src="../img/KaisShopBlack.png" alt="KaisShopBlack"></div>
+    <div id="nav">
+        <ul>
+            <li><a href="tabelle_artikel.html">Store</a></li>
+            <li><a href="tabelle_namen.html">Nutzer</a></li>
+            <li><a href="neuer_artikel.html">Add</a></li>
+            <li><a href="#" id="current">Warenkorb</a></li>
+
+        </ul>
+    </div>
+    <button class="button5" type="button" value="abmelden">Abmelden<i class="fa fa-sign-out"></i></button>
+</header>
+<h1>Warenkörbe.</h1>
+<div id="tabelle_artikel">
+    <table>
+        <col width="600">
+        <col width="450">
+        <col width="150">
+        <col width="150">
+
+        <tbody id="table">
+
+        </tbody>
+    </table>
+    <h2 id="total">Total</h2>
+
+    <br>
+    <div id="button_zurueck"><a href="tabelle_artikel.html">
+        <button class="button3" type="button">zurück</button>
+    </a></div>
+</div>
+<script>
+    for (let i = 0; i < allProducts.length; i++) {
+        for (let i = 0; i < allProducts.length; i++) {
+        console.log(allProducts[2][1])
+        var list = document.getElementById('table');
+        var total = 0;
+
+        var productName = allProducts[i][0];
+
+
+        var nameEntry = document.createElement('tr');
+        var priceEntry = document.createElement('td');
+        var amountEntry = document.createElement('td');
+        var buttonEntryNegative = document.createElement("button");
+        var buttonEntryPositive = document.createElement("button");
+        buttonEntryNegative.innerHTML = "-";
+        buttonEntryPositive.innerHTML = "+";
+        var price = allProducts[i][1];
+        var amount = allProducts[i][2];
+
+        for (let i = 0; i < allProducts.length; i++) {
+
+            total += allProducts[i][1] * allProducts[i][2];
+        }
+        nameEntry.appendChild(document.createTextNode(productName));
+        priceEntry.appendChild(document.createTextNode(price));
+        amountEntry.appendChild(document.createTextNode(amount));
+
+        list.appendChild(nameEntry);
+        list.appendChild(priceEntry);
+        list.appendChild(amountEntry);
+        list.appendChild(buttonEntryNegative);
+        list.appendChild(buttonEntryPositive);
+
+        buttonEntryPositive.addEventListener("click", function () {
+            allProducts[i][2] += 1;
+
+        });
+        buttonEntryNegative.addEventListener("click", function () {
+            allProducts[i][2] -= 1;
+
+
+        });
+        console.log(allProducts)
+
+    }
+    document.getElementById("total").innerHTML += " " + total + " €"
+
+</script>
+<footer>
+    <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>
+</footer>
+</body>
+</html>

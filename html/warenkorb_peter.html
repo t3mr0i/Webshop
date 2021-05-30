@@ -2,71 +2,130 @@
 <html>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="shopping_card.js"></script>
+
 <head>
-<meta charset="UTF-8">
-<title>Warenkorb </title>
+    <meta charset="UTF-8">
+    <title>Warenkorb </title>
 </head>
 
 <body>
 <header>
-	<div id="KaisShopKlein"> <img src="../img/KaisShopKlein.png" alt="KaisShopKlein"></div>
-	<div id="KaisShopBlack"> <img src="../img/KaisShopBlack.png" alt="KaisShopBlack"></div>
-		 <div id="nav">
-            <ul>
-                <li> <a href="tabelle_artikel.html">Store</a> </li>
-                <li><a href="tabelle_namen.html">Nutzer</a> </li>
-                <li> <a href="neuer_artikel.html">Add</a> </li>
-                <li> <a href="tabelle_warenkorb.html">Warenkorb</a> </li>
-                
-            </ul>    
-        </div>
- <button class="button5" type="button" value="abmelden">Abmelden<i class="fa fa-sign-out"></i></button>
+    <div id="KaisShopKlein"><img src="../img/KaisShopKlein.png" alt="KaisShopKlein"></div>
+    <div id="KaisShopBlack"><img src="../img/KaisShopBlack.png" alt="KaisShopBlack"></div>
+    <div id="nav">
+        <ul>
+            <li><a href="tabelle_artikel.html">Store</a></li>
+            <li><a href="tabelle_namen.html">Nutzer</a></li>
+            <li><a href="neuer_artikel.html">Add</a></li>
+            <li><a href="tabelle_warenkorb.html">Warenkorb</a></li>
+
+        </ul>
+    </div>
+    <button class="button5" type="button" value="abmelden">Abmelden<i class="fa fa-sign-out"></i></button>
 </header>
-	<h1>peter@uni-bremen.de</h1>
+<h1>peter@uni-bremen.de</h1>
 <div id="tabelle_artikel">
-  <table>
-    <col width="500">
-    <col width="550">
-    <col width="550">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Menge</th>
-        <th>Preis</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Gelbe Jacke </td>
-        <td>1</td>
-        <td>45,00 €</td>
-      </tr>
-      <tr>
-        <td>Rote Jacke mit Kapuze</td>
-        <td>1</td>
-        <td>150,00 €</td>
-      </tr>
-		<tr>
-        <td>Organic Top</td>
-        <td>1</td>
-        <td>29,99 €</td>
-      </tr>
-		<tr>
-        <td>Sweatshirt mit Reißverschluss-Kragen</td>
-        <td>2</td>
-        <td>65,99 €</td>
-      </tr>
-    </tbody>
-	    <tfoot>  
-    <tr> <td colspan="3">356,97 €</td></tr> 
-    </tfoot>
-  </table>
-	
-	<div id="button_zurueck"> <a href="tabelle_warenkorb.html"><button class="button3" type="button">zurück</button></a></div>
+    <table>
+        <col width="500">
+        <col width="550">
+        <col width="550">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Menge</th>
+            <th>Preis</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="artikel1"></td>
+            <td id="artikel1Menge"></td>
+            <td id="artikel1Preis"></td>
+        </tr>
+        <tr>
+            <td>Rote Jacke mit Kapuze</td>
+            <td>1</td>
+            <td>150,00 €</td>
+        </tr>
+        <tr>
+            <td>Organic Top</td>
+            <td>1</td>
+            <td>29,99 €</td>
+        </tr>
+        <tr>
+            <td>Sweatshirt mit Reißverschluss-Kragen</td>
+            <td>2</td>
+            <td>65,99 €</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">356,97 €</td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <div id="button_zurueck"><a href="tabelle_warenkorb.html">
+        <button class="button3" type="button">zurück</button>
+    </a></div>
 </div>
 <br>
-        <footer> 
-     <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>
-    </footer>    
+<script>
+    document.getElementById("artikel1").innerHTML = allProducts[0][0];
+    document.getElementById("artikel2").innerHTML = allProducts[1][0];
+    document.getElementById("artikel3").innerHTML = allProducts[1][0];
+    document.getElementById("artikel4").innerHTML = allProducts[1][0];
+
+    document.getElementById("artikel1Preis").innerHTML = allProducts[0][0];
+    document.getElementById("artikel1Menge").innerHTML = allProducts[1][0];
+
+    var artikel1 = allProducts[1]
+    var table = document.getElementById('table');
+    var tbody = document.createElement("tbody");
+    var divContainer = document.createElement("div");
+    table.appendChild(tbody);
+    cartFall.forEach(function (products) {
+        var row = document.createElement("tr");
+        products.forEach(function (product) {
+
+            var cell = document.createElement("td");
+
+            cell.textContent = product;
+
+
+            row.appendChild(cell);
+        });
+        tbody.appendChild(row);
+    });
+
+
+    for (let i = 0; i < allProducts.length; i++) {
+
+        total += allProducts[i][1] * allProducts[i][2];
+    }
+    document.getElementById("total").innerHTML += " " + total + " €"
+
+
+    var buttonEntryNegative = document.createElement("button");
+    var buttonEntryPositive = document.createElement("button");
+    buttonEntryNegative.innerHTML = "-";
+    buttonEntryPositive.innerHTML = "+";
+
+    buttonEntryPositive.addEventListener("click", function () {
+        allProducts[i][2].add();
+
+    });
+    buttonEntryNegative.addEventListener("click", function () {
+        allProducts[i][2] -= 1;
+
+
+    });
+
+
+</script>
+<footer>
+    <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>
+</footer>
 </body>
 </html>

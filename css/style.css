@@ -264,6 +264,9 @@ label {
 
 /*Buttons*/
 button {
+    background-color: #ea9c7a;
+    color: #FFFFFF;
+    border-color: #ea9c7a;
     font-size: 16px;
     border-radius: 11px;
     transition: all 500ms;
