@@ -2,56 +2,113 @@
 <html>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="shopping_card.js"></script>
+
 <head>
-<meta charset="UTF-8">
-<title>Warenkorb </title>
+    <meta charset="UTF-8">
+    <title>Warenkorb </title>
 </head>
 
 <body>
 <header>
-	<div id="KaisShopKlein"> <img src="../img/KaisShopKlein.png" alt="KaisShopKlein"></div>
-	<div id="KaisShopBlack"> <img src="../img/KaisShopBlack.png" alt="KaisShopBlack"></div>
-		 <div id="nav">
-            <ul>
-                <li> <a href="tabelle_artikel.html">Store</a> </li>
-                <li><a href="tabelle_namen.html">Nutzer</a> </li>
-                <li> <a href="neuer_artikel.html">Add</a> </li>
-                <li> <a href="tabelle_warenkorb.html">Warenkorb</a> </li>
-                
-            </ul>    
-        </div>
- <button class="button5" type="button" value="abmelden">Abmelden<i class="fa fa-sign-out"></i></button>
+    <div id="KaisShopKlein"><img src="../img/KaisShopKlein.png" alt="KaisShopKlein"></div>
+    <div id="KaisShopBlack"><img src="../img/KaisShopBlack.png" alt="KaisShopBlack"></div>
+    <div id="nav">
+        <ul>
+            <li><a href="tabelle_artikel.html">Store</a></li>
+            <li><a href="tabelle_namen.html">Nutzer</a></li>
+            <li><a href="neuer_artikel.html">Add</a></li>
+            <li><a href="tabelle_warenkorb.html">Warenkorb</a></li>
+
+        </ul>
+    </div>
+    <button class="button5" type="button" value="abmelden">Abmelden<i class="fa fa-sign-out"></i></button>
 </header>
-	<h1>p.post@uni-bremen.de</h1>
+<h1>p.post@uni-bremen.de</h1>
 <div id="tabelle_artikel">
-  <table>
-    <col width="500">
-    <col width="550">
-    <col width="550">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Menge</th>
-        <th>Preis</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Gelbe Jacke</td>
-        <td>1</td>
-        <td>45,00 €</td>
-      </tr>
-    </tbody>
-	    <tfoot>  
-    <tr> <td colspan="3">45,00 €</td></tr> 
-    </tfoot>
-  </table>
-	
-	<div id="button_zurueck"> <a href="tabelle_warenkorb.html"><button class="button3" type="button">zurück</button></a></div>
+    <table>
+        <col width="500">
+        <col width="550">
+        <col width="550">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Menge</th>
+            <th>Preis</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="artikel1"></td>
+            <td>
+                <button class="cartButton" type="button" onclick=decrease()>-</button>
+                <p id="artikel1Menge"></p>
+                <button class="cartButton" type="button" onclick=increase()>+</button>
+
+            </td>
+            <td id="artikel1Preis"></td>
+        </tr>
+        <tr>
+            <td id="artikel2"></td>
+            <td>
+                <button class="cartButton" type="button" onclick=decrease2()>-</button>
+                <p id="artikel2Menge"></p>
+                <button class="cartButton" type="button" onclick=increase2()>+</button>
+            </td>
+            <td id="artikel2Preis"></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td id="total" colspan="3"></td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <div id="button_zurueck"><a href="tabelle_warenkorb.html">
+        <button class="button3" type="button">zurück</button>
+    </a></div>
 </div>
 <br>
-    <footer> 
-     <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>
-    </footer>    
+<script>
+    function decrease() {
+
+        cartPost[0][2] -= 1;
+        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+
+    }
+
+    function increase() {
+        cartPost[0][2] += 1;
+        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+
+    }
+
+    function decrease2() {
+
+        cartPost[1][2] -= 1;
+        document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
+
+    }
+
+    function increase2() {
+        cartPost[1][2] += 1;
+        document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
+
+    }
+
+    document.getElementById("artikel1").innerHTML = cartPost[0][0];
+    document.getElementById("artikel1Preis").innerHTML = cartPost[0][1];
+    document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+    document.getElementById("artikel2").innerHTML = cartPost[1][0];
+    document.getElementById("artikel2Preis").innerHTML = cartPost[1][1];
+    document.getElementById("artikel2Menge").innerHTML = cartPost[1][2];
+    document.getElementById("total").innerHTML = cartPost[0][1] * cartPost[0][2] + cartPost[1][1] * cartPost[1][2];
+
+
+</script>
+<footer>
+    <p> © Kai Detmers & Kai Gätjen - 2021 - Webapplikationen - Universität Bremen </p>
+</footer>
 </body>
 </html>

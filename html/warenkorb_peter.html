@@ -40,28 +40,18 @@
         <tbody>
         <tr>
             <td id="artikel1"></td>
-            <td id="artikel1Menge"></td>
+            <td>
+                <button class="cartButton" type="button" onclick=decrease()>-</button>
+                <p id="artikel1Menge"></p>
+                <button class="cartButton" type="button" onclick=increase()>+</button>
+
+            </td>
             <td id="artikel1Preis"></td>
-        </tr>
-        <tr>
-            <td>Rote Jacke mit Kapuze</td>
-            <td>1</td>
-            <td>150,00 €</td>
-        </tr>
-        <tr>
-            <td>Organic Top</td>
-            <td>1</td>
-            <td>29,99 €</td>
-        </tr>
-        <tr>
-            <td>Sweatshirt mit Reißverschluss-Kragen</td>
-            <td>2</td>
-            <td>65,99 €</td>
         </tr>
         </tbody>
         <tfoot>
         <tr>
-            <td colspan="3">356,97 €</td>
+            <td id="total" colspan="3"></td>
         </tr>
         </tfoot>
     </table>
@@ -72,55 +62,25 @@
 </div>
 <br>
 <script>
-    document.getElementById("artikel1").innerHTML = allProducts[0][0];
-    document.getElementById("artikel2").innerHTML = allProducts[1][0];
-    document.getElementById("artikel3").innerHTML = allProducts[1][0];
-    document.getElementById("artikel4").innerHTML = allProducts[1][0];
 
-    document.getElementById("artikel1Preis").innerHTML = allProducts[0][0];
-    document.getElementById("artikel1Menge").innerHTML = allProducts[1][0];
+    function decrease() {
 
-    var artikel1 = allProducts[1]
-    var table = document.getElementById('table');
-    var tbody = document.createElement("tbody");
-    var divContainer = document.createElement("div");
-    table.appendChild(tbody);
-    cartFall.forEach(function (products) {
-        var row = document.createElement("tr");
-        products.forEach(function (product) {
+        cartPost[0][2] -= 1;
+        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
 
-            var cell = document.createElement("td");
-
-            cell.textContent = product;
-
-
-            row.appendChild(cell);
-        });
-        tbody.appendChild(row);
-    });
-
-
-    for (let i = 0; i < allProducts.length; i++) {
-
-        total += allProducts[i][1] * allProducts[i][2];
     }
-    document.getElementById("total").innerHTML += " " + total + " €"
+
+    function increase() {
+        cartPost[0][2] += 1;
+        document.getElementById("artikel1Menge").innerHTML = cartPost[0][2];
+
+    }
+    document.getElementById("artikel1").innerHTML = cartPeter[0][0];
+    document.getElementById("artikel1Preis").innerHTML = cartPeter[0][1];
+    document.getElementById("artikel1Menge").innerHTML = cartPeter[0][2];
 
 
-    var buttonEntryNegative = document.createElement("button");
-    var buttonEntryPositive = document.createElement("button");
-    buttonEntryNegative.innerHTML = "-";
-    buttonEntryPositive.innerHTML = "+";
-
-    buttonEntryPositive.addEventListener("click", function () {
-        allProducts[i][2].add();
-
-    });
-    buttonEntryNegative.addEventListener("click", function () {
-        allProducts[i][2] -= 1;
-
-
-    });
+    document.getElementById("total").innerHTML = cartPeter[0][1] * cartPeter[0][2];
 
 
 </script>

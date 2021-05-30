@@ -6,19 +6,14 @@ function product(name, price, amount) {
     return [this.name, this.price, this.amount];
 }
 
-product.add = function() {
-    this.amount +=1;
-    console.log(amount)
-}
 
 
-var pulli_rosa = new product("Rosa Pullover", 59.99,0 );
-var shirt_weiss = new product("Weißes T-Shirt", 29.99,0 );
-var pulli_rot = new product("Roter Pullover", 65.99,0 );
-var jacke_rot = new product("Rote Jacke", 150.00,0);
-var jacke_gelb = new product("Gelbe Jacke", 45.50,0);
-
-var allProducts = [
+var pulli_rosa = new product("Rosa Pullover", 59.99, 1);
+var shirt_weiss = new product("Weißes T-Shirt", 29.99, 1);
+var pulli_rot = new product("Roter Pullover", 65.99, 1);
+var jacke_rot = new product("Rote Jacke", 150.00, 1);
+var jacke_gelb = new product("Gelbe Jacke", 45.50, 1);
+const allProducts = [
     pulli_rosa,
     shirt_weiss,
     pulli_rot,
@@ -26,15 +21,31 @@ var allProducts = [
     jacke_gelb
 ]
 
-var cartFall = [
+const cartFall = [
     pulli_rosa,
     pulli_rot,
     jacke_gelb
 ]
 
-var cartPeter = [
+const cartPeter = [
     jacke_gelb
 ]
+const cartPost = [
+    jacke_gelb,
+    jacke_rot,
+]
+const cartSchneider = [
+    jacke_gelb,
+    jacke_rot,
+    pulli_rot,
+]
+const cartWahnsinn = [
+    jacke_gelb,
+    pulli_rosa,
+    shirt_weiss,
+
+]
+
 function saveToCart(myItem) {
     if (myItem.name === null) {
         localStorage.setItem(myItem.name, myItem.price);
@@ -49,6 +60,7 @@ function saveToCart(myItem) {
 
 
 }
+
 let myShoppingCart = [];
 
 console.log(localStorage.getItem("myShoppingCard"));
