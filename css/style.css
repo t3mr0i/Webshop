@@ -274,6 +274,7 @@ button:hover {
     opacity: 0.8;
     transform: scale(1.01);
 }
+
 #passwordWarningText {
     color: #ea9c7a;
     font-size: 20px;
@@ -281,6 +282,7 @@ button:hover {
 
 
 }
+
 .wrong-password {
     border-color: red;
     color: #ea9c7a;
@@ -289,11 +291,12 @@ button:hover {
 }
 
 .valid-password {
-    border-color:#94BAB7;
+    border-color: #94BAB7;
     color: #ea9c7a;
     font-size: 20px;
     outline-color: #94BAB7;
 }
+
 .button1 {
     background-color: #94BAB7;
     color: #FFFFFF;
@@ -302,13 +305,15 @@ button:hover {
     height: 40px;
     margin: 25px 25px 10px 25px;
 }
-.button1-hidden{
+
+.button1-hidden {
     border: 1px solid #999999;
     background-color: #cccccc;
     color: #666666;
     width: 200px;
     height: 40px;
-    margin: 25px 25px 10px 25px;}
+    margin: 25px 25px 10px 25px;
+}
 
 .button2 {
     background-color: #707070;
@@ -326,6 +331,15 @@ button:hover {
     width: 200px;
     height: 40px;
     margin: 25px 25px 10px 25px;
+}
+
+.cartButton {
+    background-color: #ea9c7a;
+    color: #FFFFFF;
+    border-color: #ea9c7a;
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px 5px 5px;
 }
 
 .button5 {
@@ -486,7 +500,6 @@ footer p {
         background-color: #dd7777;
 
     }
-
 
 
     /*An-/Abmelden*/
