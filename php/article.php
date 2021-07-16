@@ -8,7 +8,7 @@ include('setupDB.php');
 	$beschreibung = $_POST['beschreibung'];
 	
 
-	$sql = "INSERT INTO artikel (aname, preis, beschreibung) VALUES ('$aname', '$preis', '$beschreibung', );";
+	$sql = "INSERT INTO artikel (aname, preis, beschreibung) VALUES ('$aname', '$preis', '$beschreibung' );";
 	mysqli_query($con, $sql);
 	
 ?>
