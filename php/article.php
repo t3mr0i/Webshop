@@ -9,7 +9,7 @@ include('setupDB.php');
 	$bild = $_POST['bild'];
 	
 
-	$sql = "INSERT INTO artikel (nname, vorname, email, passwort) VALUES ('name', 'preis', 'beschreibung', 'bild');";
+	$sql = "INSERT INTO artikel (aname, preis, beschreibung, bild) VALUES ('$aname', '$preis', '$beschreibung', '$bild');";
 	mysql_query($con, $sql);
 	
 ?>

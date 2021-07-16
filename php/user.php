@@ -10,7 +10,7 @@ include('setupDB.php');
 	$passwort = $_POST['passwort'];
 	
 
-	$sql = "INSERT INTO nutzer (nname, vorname, email, passwort) VALUES ('nname', 'vorname', 'email', 'passwort');";
+	$sql = "INSERT INTO nutzer (nname, vorname, email, passwort) VALUES ('$nname', '$vorname', '$email', '$passwort');";
 	mysql_query($con, $sql);
 	
 ?>
