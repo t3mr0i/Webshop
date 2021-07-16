@@ -1,6 +1,8 @@
 <!doctype html>
 <?php
-include('setupDB.php')
+require('setupDB.php');
+
+include('setupDB.php');
 
 	$nname = $_POST['name'];
 	$vorname = $_POST['vorname'];
