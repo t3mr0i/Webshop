@@ -6,7 +6,6 @@
 	$user = "root";
 	$pw = "";
 	$db = "Webshop";
-	$host = '127.0.0.1';
 
 	
 	$con = new mysqli($servername, $user, $pw, $db );
