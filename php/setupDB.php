@@ -6,7 +6,6 @@
 	$user = "root";
 	$pw = "";
 	$db = "Webshop";
-
 	
 	$con = new mysqli($servername, $user, $pw, $db );
 	
