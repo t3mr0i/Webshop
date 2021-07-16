@@ -10,7 +10,7 @@
 <body>
 <h2>Registrieren.</h2>
 <div id="log_in_box">
-    <form  action="user.php" method="post">
+    <form action="user.php" method="post">
         <label for="email"></label>
         <input type="text" name="vorname" id="vorname" placeholder="Vorname">
         <br>
@@ -26,7 +26,7 @@
 
         <div id="buttonRow">
             <a href="">
-                <button class="button1-hidden" type="button" value="Anmelden" id="signUp">Anmelden
+                <button class="button1-hidden" type="submit" value="Anmelden" id="signUp">Anmelden
                 </button>
             </a>
             <a href="index.html">
@@ -44,6 +44,7 @@
         var secondFieldValid;
         passwordInput = document.getElementById("passwort").value;
         secondPasswordInput = document.getElementById("passwort_wiederholen").value;
+        var isSamePassword = passwordInput === secondPasswordInput;
         if (RegExp(/^(?=.*\d).{5,}$/).test(passwordInput)) {
             document.getElementById("passwort").className = "valid-password";
             firstFieldValid = true;
@@ -83,6 +84,7 @@
     };
     document.getElementById('passwort_wiederholen').onblur = function () {
         checkPassword();
+        
     };
 
     document.getElementById('passwort').onfocus = function () {
