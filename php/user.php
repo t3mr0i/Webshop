@@ -11,7 +11,7 @@ include('setupDB.php');
 	
 	echo 'console.log("HI")';
 
-	$sql = "INSERT INTO nutzer (nname, vorname, email, passwort) VALUES ('$nname', '$vorname', '$email', '$passwort');";	mysql_query($con, $sql);
-	mysql_query($con, $sql);
+	$sql = "INSERT INTO nutzer (nname, vorname, email, passwort) VALUES ('$nname', '$vorname', '$email', '$passwort');";
+	mysqli_query($con, $sql);
 
 ?>

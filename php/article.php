@@ -10,6 +10,6 @@ include('setupDB.php');
 	
 
 	$sql = "INSERT INTO artikel (aname, preis, beschreibung, bild) VALUES ('$aname', '$preis', '$beschreibung', '$bild');";
-	mysql_query($con, $sql);
+	mysqli_query($con, $sql);
 	
 ?>
