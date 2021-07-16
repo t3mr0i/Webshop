@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Erstellungszeit: 20. Jun 2021 um 17:42
--- Server-Version: 10.4.19-MariaDB
--- PHP-Version: 8.0.7
+-- Host: 127.0.0.1
+-- Erstellungszeit: 16. Jul 2021 um 22:48
+-- Server-Version: 10.4.20-MariaDB
+-- PHP-Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `Webshop`
+-- Datenbank: `webshop`
 --
 
 -- --------------------------------------------------------
@@ -123,6 +123,22 @@ ALTER TABLE `bestellung`
 ALTER TABLE `nutzer`
   ADD PRIMARY KEY (`id`),
   ADD KEY `nutzer_nname` (`nname`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT für Tabelle `nutzer`
+--
+ALTER TABLE `nutzer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- Constraints der exportierten Tabellen
